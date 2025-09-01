@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Hachi+Maru+Pop&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Anton&family=Hachi+Maru+Pop&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Asimovian&family=Hachi+Maru+Pop&display=swap');
 
 /* Color palette (light mode by default) */
 :root {
@@ -58,10 +60,7 @@ body {
 
 }
 
-.vertical-navbar .nav-icons {
-  background: var(--navbar-bg);
-  border: 1px solid var(--navbar-border);
-}
+
 
 .nav-icon {
   &:hover {
@@ -85,11 +84,12 @@ section {
    TYPOGRAPHY UTILITIES
    -------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Anton', sans-serif; /* Imported above */
-  font-weight: bold;
+  font-family:"Asimovian", sans-serif;
+  font-weight: 800;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
+  color: var(--color-pink-medium);
 }
 p, li, span, a {
   font-weight: 700;

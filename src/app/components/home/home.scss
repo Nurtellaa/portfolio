@@ -1,0 +1,59 @@
+#home{
+    position: relative;
+}
+.title{
+    position: absolute;
+    width: 100vw;
+    font-size: 10vw;
+    letter-spacing: 1vw;
+    text-align: center;
+}
+.content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .svg-icons{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        .cd{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+        
+        .leaf01{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 50%;
+            height: 50%;
+            object-fit: contain;
+        }
+
+        .leaf02{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 40%;
+            height: 40%;
+            object-fit: contain;
+        }
+    }
+}
+
