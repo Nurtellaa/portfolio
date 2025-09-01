@@ -22,11 +22,11 @@
   --color-pink-strong: #C2185B;
   --color-pink-medium: #E91E63;
   --color-pink-light: #F8BBD0;
-  --color-pink-extra-light: #f9dae5;
+  --color-pink-extra-light: #ffe6ef;
 
   --color-green-very-strong: #031D05;
   --color-green-strong: #1B5E20;
-  --color-green-medium: #2E7D32;
+  --color-green-medium: #609d62;
   --color-green-light: #A5D6A7;
   --color-green-extra-light: #EAFFEB;
 
@@ -83,7 +83,7 @@ section {
 /* -----------------------------------------------------------------------
    TYPOGRAPHY UTILITIES
    -------------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, span {
   font-family:"Asimovian", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   color: var(--color-pink-medium);
 }
-p, li, span, a {
+p, li, a {
   font-weight: 700;
   font-family: 'Hachi Maru Pop', cursive; /* Imported above */
   margin: 0;
