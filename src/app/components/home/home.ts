@@ -3,7 +3,6 @@ import { About } from '../about/about';
 import { Education } from '../education/education';
 import { Experience } from '../experience/experience';
 import { Projects } from '../projects/projects';
-import { Technologies } from '../technologies/technologies';
 import { Contact } from '../contact/contact';
 
 @Component({
@@ -14,7 +13,6 @@ import { Contact } from '../contact/contact';
     Education,
     Experience,
     Projects,
-    Technologies,
     Contact
   ],
   templateUrl: './home.html',
