@@ -1,10 +1,12 @@
 #home{
     position: relative;
+    width: 100%;
 }
 .title{
     position: absolute;
-    width: 100vw;
-    font-size: 10vw;
+    left: 0;
+    right: 0;
+    font-size: 8vw;
     letter-spacing: 1vw;
     text-align: center;
 }
