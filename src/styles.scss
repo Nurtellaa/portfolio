@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Hachi+Maru+Pop&display=swap');
+
+/* Color palette (light mode by default) */
+:root {
+  /* Keys */
+  --background: #fbfff8;
+  --text-primary: #2E7D32;
+  --text-secondary: #A5D6A7;
+  --border-color: #e0e0e0;
+  --navbar-bg: var(--color-pink-extra-light);
+  --navbar-border: var(--color-pink-light);
+  --icon-color: var(--color-pink-medium);
+  --icon-hover-bg: var(--color-pink-medium);
+  --icon-active-bg: var(--color-pink-strong);
+  --tooltip-bg: var(--color-pink-medium);
+  --tooltip-text: #ffffff;
+
+  /* Color palette */
+  --color-pink-extra-strong: #760f38;
+  --color-pink-strong: #C2185B;
+  --color-pink-medium: #E91E63;
+  --color-pink-light: #F8BBD0;
+  --color-pink-extra-light: #f9dae5;
+
+  --color-green-very-strong: #031D05;
+  --color-green-strong: #1B5E20;
+  --color-green-medium: #2E7D32;
+  --color-green-light: #A5D6A7;
+  --color-green-extra-light: #EAFFEB;
+
+  --color-yellow-strong: #F57F17;
+  --color-yellow-medium: #FBC02D;
+  --color-yellow-light: #FFF59D;
+
+  --color-blue-strong: #0D47A1;
+  --color-blue-medium: #1976D2;
+  --color-blue-light: #81D4FA;
+}
+
+/* Dark mode */
+body.dark-mode {
+  --background: #031D05;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #333333;
+  --navbar-bg: var(--color-pink-strong);
+  --navbar-border: var(--color-pink-medium);
+  --icon-color: var(--color-pink-light);
+  --icon-hover-bg: var(--color-pink-medium);
+  --icon-active-bg: var(--color-pink-extra-strong);
+  --tooltip-bg: var(--color-pink-medium);
+  --tooltip-text: #ffffff;
+}
+body {
+  background: var(--background);
+  color: var(--text-primary);  
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.vertical-navbar .nav-icons {
+  background: var(--navbar-bg);
+  border: 1px solid var(--navbar-border);
+}
+
+.nav-icon {
+  &:hover {
+    background: var(--navbar-hover);
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;  
+}
+section {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid red; /* For debugging */
+}
+
+/* -----------------------------------------------------------------------
+   TYPOGRAPHY UTILITIES
+   -------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Anton', sans-serif; /* Imported above */
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+p, li, span, a {
+  font-weight: 700;
+  font-family: 'Hachi Maru Pop', cursive; /* Imported above */
+  margin: 0;
+  padding: 0;
+}
+
+/* -----------------------------------------------------------------------
+   COLOR UTILITIES
+   -------------------------------------------------------------------- */
+
+.pink-strong        { color: var(--color-pink-strong); }
+.pink-medium        { color: var(--color-pink-medium); }
+.pink-light         { color: var(--color-pink-light); }
+.green-very-strong  { color: var(--color-green-very-strong); }
+.green-strong       { color: var(--color-green-strong); }
+.green-medium       { color: var(--color-green-medium); }
+.green-light        { color: var(--color-green-light); }
+.green-extra-light  { color: var(--color-green-extra-light); }
+.yellow-strong      { color: var(--color-yellow-strong); }
+.yellow-medium      { color: var(--color-yellow-medium); }
+.yellow-light       { color: var(--color-yellow-light); }
+.blue-strong        { color: var(--color-blue-strong); }
+.blue-medium        { color: var(--color-blue-medium); }
+.blue-light         { color: var(--color-blue-light); }
+
+
+/* -----------------------------------------------------------------------
+   INTERACTION / EFFECT UTILITIES
+   -------------------------------------------------------------------- */
+
+/* Subtle lift on hover */
+.anim-scale01:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Stronger lift for nested .project-img on hover of parent */
+.anim-scale02:hover .project-img {
+  transform: translateY(-2px) scale(1.06);
+}
+
+/* Continuous rotation */
+.rotating {
+  animation: spin 20s linear infinite;
+}
+
+/* Wind sway variants; transform-origin tuned per class */
+.wind   { animation: sway  3s ease-in-out infinite; transform-origin: right top; }
+.wind2  { animation: sway2 3s ease-in-out infinite; transform-origin: left bottom; }
+.wind3  { animation: sway  3s ease-in-out infinite; transform-origin: center; }
+.wind4  { animation: sway2 3s ease-in-out infinite; transform-origin: center; }
+
+/* Gentle vertical drift for clouds */
+.cloud-sway {
+  animation: cloudDrift 8s ease-in-out infinite;
+}
+
+
+/* -----------------------------------------------------------------------
+   KEYFRAMES
+   -------------------------------------------------------------------- */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes sway {
+  0%   { transform: rotate(0deg) translateX(0); }
+  25%  { transform: rotate(-2deg) translateX(-1px); }
+  50%  { transform: rotate(0deg) translateX(0); }
+  75%  { transform: rotate(2deg) translateX(1px) scale(1.01); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+@keyframes sway2 {
+  0%   { transform: rotate(0deg) translateX(0); }
+  25%  { transform: rotate(2deg) translateX(1px) scale(1.02); }
+  50%  { transform: rotate(0deg) translateX(0); }
+  75%  { transform: rotate(-2deg) translateX(-1px) scale(1.02); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+@keyframes cloudDrift {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-5px); }
+  50%  { transform: translateY(0); }
+  75%  { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
