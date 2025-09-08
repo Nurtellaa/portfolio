@@ -71,7 +71,7 @@
 // Responsive
 @media (max-width: 1024px) {
   .contact {
-    flex-direction: column-reverse;
+    flex-direction: row;
     justify-content: center;
     
     .me-img {
@@ -90,6 +90,7 @@
       
       .icons {
         gap: 1.8rem;
+        flex-direction: row;
         
         svg {
           width: 55px;
