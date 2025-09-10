@@ -1,0 +1,73 @@
+<div class="gamejam-container">
+  <h2 class="gamejam-title">Global Game Jam 2024</h2>
+  
+  <div class="gamejam-card">
+    <div class="gamejam-header">
+      <h3 class="game-name">{{ gameJam2024.title }}</h3>
+      <span class="game-year">{{ gameJam2024.year }}</span>
+    </div>
+    
+    <div class="game-content">
+        <div class="column1">
+            <div class="game-image">
+                <img [src]="gameJam2024.imageUrl" [alt]="gameJam2024.title + ' screenshot'" class="screenshot">
+            <div class="gamejam-badge">GGJ {{ gameJam2024.year }}</div>
+            <div class="game-details">
+                <div class="detail-section">
+                    <h4>About the Game</h4>
+                    <p>{{ gameJam2024.description }}</p>
+                    <p>{{ gameJam2024.story }}</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="column2">
+            
+
+        
+        
+      
+        
+        <div class="detail-section">
+          <h4>Jam Details</h4>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <span class="detail-label">Theme:</span>
+              <span class="detail-value">{{ gameJam2024.theme }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Jam Site:</span>
+              <span class="detail-value">{{ gameJam2024.jamSite }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Language:</span>
+              <span class="detail-value">{{ gameJam2024.language }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="detail-section">
+          <h4>Technical Details</h4>
+          <div class="tech-tags">
+            <span class="tech-tag" *ngFor="let tool of gameJam2024.tools">{{ tool }}</span>
+          </div>
+          <div class="platform-tags">
+            <span class="platform-tag" *ngFor="let platform of gameJam2024.platforms">{{ platform }}</span>
+          </div>
+        </div>
+        
+        <div class="detail-section">
+          <h4>Installation</h4>
+          <p class="installation-text">{{ gameJam2024.installation }}</p>
+          <p class="executable-info">Executable: {{ gameJam2024.executable }}</p>
+        </div>
+        
+        <div class="game-actions">
+          <a [href]="gameJam2024.downloadLink" target="_blank" class="download-btn">
+            Download Game
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

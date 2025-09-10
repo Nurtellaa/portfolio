@@ -7,6 +7,7 @@ import { Contact } from '../contact/contact';
 import { Subscription } from 'rxjs';
 import { AudioService } from '../../services/audio.service';
 import { CommonModule } from '@angular/common';
+import { Gamejams } from "../gamejams/gamejams";
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,9 @@ import { CommonModule } from '@angular/common';
     Experience,
     Projects,
     Contact,
-    CommonModule
-  ],
+    CommonModule,
+    Gamejams
+],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
