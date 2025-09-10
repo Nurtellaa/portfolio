@@ -28,6 +28,23 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(private audioService: AudioService) {}
 
+  ngAfterViewInit() {
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.2 }); // activates when 20% of the section is visible
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+
   ngOnInit(): void {
     this.subscription = this.audioService.mutedState$.subscribe(muted => {
       this.isMusicPlaying = !muted;
