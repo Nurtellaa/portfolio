@@ -1,0 +1,229 @@
+/* Modal overlay - fixed positioning to cover entire viewport */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 42, 19, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Retro window styling */
+.modal {
+  background: var(--color-green-extra-light);
+  border: 5px solid var(--color-pink-strong);
+  border-radius: 20px;
+  padding: 0;
+  width: 85vw;
+  max-width: 1000px;
+  height: auto;
+  max-height: 65vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 8px 8px 0 var(--color-pink-extra-strong);
+  transform: translateY(50px) scale(0.95);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Close button styled as retro button */
+.modal-header {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: var(--color-pink-strong);
+}
+.close-btn {
+  font-size: 14px;
+  background: none;
+  border: none;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  outline: none;
+  color: var(--color-pink-extra-light);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  transform: scale(1.6);
+  color: var(--color-green-light);
+}
+
+/* Modal content area */
+.modal-content {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  background: var(--color-green-extra-light);
+}
+/* Form */
+.modal-content form {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.modal-content label {
+  font-weight: bold;
+  color: var(--color-pink-strong);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 80%;
+  padding: 12px 15px;
+  border: 2px solid var(--color-pink-strong);
+  border-radius: 8px;
+  background: var(--color-green-extra-light);
+  font-size: 1rem;
+  color: var(--color-pink-extra-strong);
+  transition: all 0.3s ease;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: var(--color-green-strong);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2), 
+              inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.modal-content button {
+  padding: 12px 25px;
+  background: linear-gradient(to bottom, var(--color-pink-strong), var(--color-pink-light));
+  color: white;
+  border: 1px solid var(--color-pink-strong);
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.4);
+}
+
+.modal-content button:hover {
+  background: linear-gradient(to bottom, var(--color-green-strong), var(--color-green-light));
+  transform: translateY(-2px);
+  border: 1px solid var(--color-green-strong);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.4);
+}
+
+.modal-content button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+              inset 1px 1px 0px rgba(255, 255, 255, 0.4);
+}
+
+/* Validations style */
+.modal-content input:invalid:not(:focus):not(:placeholder-shown),
+.modal-content textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #ff4757;
+  background-color: rgba(255, 71, 87, 0.1);
+}
+/* Retro scrollbar */
+.modal-content::-webkit-scrollbar {
+  width: 14px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px solid var(--color-pink-strong);
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-pink-strong), var(--color-pink-light));
+  border: 1px solid var(--color-pink-strong);
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4);
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--color-green-strong), var(--color-green-light));
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .modal {
+    width: 90vw;
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 95vw;
+    max-height: 70vh;
+  }
+    .modal-content form {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .modal-content input,
+  .modal-content textarea {
+    padding: 10px 12px;
+  }
+  
+  .modal-content button {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    max-height: 75vh;
+  }
+}

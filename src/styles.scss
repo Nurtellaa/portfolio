@@ -82,7 +82,7 @@ section {
 /* -----------------------------------------------------------------------
    TYPOGRAPHY UTILITIES
    -------------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6, span {
+h1, h2, h3, h4, h5, h6, span, label {
   font-family:"Asimovian", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6, span {
   color: var(--color-pink-medium);
 }
 
-p, li, a {
+p, li, a, input, textarea, button{
   font-weight: 700;
   font-family: 'Hachi Maru Pop', cursive; /* Imported above */
   margin: 0;
