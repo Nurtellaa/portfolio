@@ -1,48 +1,25 @@
-
 <div class="projects">
-    <div class="title">
-        <h1>PROJECTS</h1>
-    </div>
-    <div class="cards">
-    <div class="card">
+  <div class="title">
+    <h1>PROJECTS</h1>
+  </div>
+
+  <div class="cards">
+    <div class="card" *ngFor="let project of projects" (click)="openModal(project)">
       <div class="card-img">
-        <img src="/assets/projects/project1.jpg" alt="Project 1">
+        <img [src]="project.screenshots?.[0]" [alt]="project.title">
       </div>
-      
+
       <div class="card-content">
-        <h4 class="card-title">E-commerce Platform</h4>
-        <p class="card-description">
-          A full-stack e-commerce solution with React, Node.js, and MongoDB. 
-        </p>
-        
+        <h4 class="card-title">{{ project.title }}</h4>
+        <p class="card-description">{{ project.description }}</p>
       </div>
     </div>
-    <div class="card">
-      <div class="card-img">
-        <img src="/assets/projects/project1.jpg" alt="Project 1">
-      </div>
-      
-      <div class="card-content">
-        <h4 class="card-title">E-commerce Platform</h4>
-        <p class="card-description">
-          A sample project description goes here.
-        </p>
-        
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-img">
-        <img src="/assets/projects/project1.jpg" alt="Project 1">
-      </div>
-      
-      <div class="card-content">
-        <h4 class="card-title">E-commerce Platform</h4>
-        <p class="card-description">
-          A full- user , payment processing, and admin dashboard.
-        </p>
-        
-      </div>
-    </div>
-    
   </div>
 </div>
+
+<!-- Usar el componente modal -->
+<app-modal 
+  [project]="selectedProject" 
+  [isActive]="isModalActive" 
+  (closeModal)="closeModal()">
+</app-modal>

@@ -1,0 +1,50 @@
+<div class="modal-overlay" [class.active]="isActive" (click)="onClose()">
+  <div class="modal" (click)="preventClose($event)">
+    <div class="modal-header">
+      <button class="close-btn" (click)="onClose()">X</button>
+    </div>
+
+    <div class="modal-content" *ngIf="project">
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
+
+      <h3>Technologies</h3>
+      <ul class="technologies-container">
+        <li *ngFor="let tech of project.technologies" 
+            class="tech-badge {{getExperienceClass(tech.experienceLevel)}}">
+          <span class="tech-icon">
+            <img *ngIf="tech.iconUrl" 
+                [src]="tech.iconUrl" 
+                [alt]="tech.name + ' icon'" 
+                class="tech-icon-img"
+                (error)="onIconError($event, tech.name)">
+            <span *ngIf="!tech.iconUrl">{{getTechIcon(tech.name)}}</span>
+          </span>
+          <p class="tech-name">{{ tech.name }}</p>
+          <span class="tech-tooltip">{{getExperienceText(tech.experienceLevel)}}</span>
+        </li>
+      </ul>
+
+      <h3>Features</h3>
+      <ul>
+        <li *ngFor="let feature of project?.features">{{ feature }}</li>
+      </ul>
+
+      <h3>Contribution</h3>
+      <p>{{ project.contribution }}</p>
+
+      <h3 *ngIf="project.screenshots?.length">Screenshots</h3>
+      <div class="screenshots" *ngIf="project.screenshots?.length">
+        <img *ngFor="let shot of project.screenshots" [src]="shot" alt="{{ project.title }} screenshot">
+      </div>
+
+      <p class="status">{{ project.status | titlecase }}</p>
+
+      <div class="links">
+        <a *ngIf="project?.demoUrl" [href]="project?.demoUrl" target="_blank">🌍 Demo</a>
+        <a *ngIf="project?.repoUrl" [href]="project?.repoUrl" target="_blank">💻 Code</a>
+        <a *ngIf="project?.blogUrl" [href]="project?.blogUrl" target="_blank">📝 Blog</a>
+      </div>
+    </div>
+  </div>
+</div>

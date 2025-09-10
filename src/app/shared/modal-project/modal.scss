@@ -1,0 +1,351 @@
+/* Modal overlay - fixed positioning to cover entire viewport */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 42, 19, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Retro window styling */
+.modal {
+  background: var(--color-green-extra-light);
+  border: 5px solid var(--color-pink-strong);
+  border-radius: 20px;
+  padding: 0;
+  width: 85vw;
+  max-width: 1000px;
+  height: auto;
+  max-height: 65vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 8px 8px 0 var(--color-pink-extra-strong);
+  transform: translateY(50px) scale(0.95);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Modal content area */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 2rem;
+  align-items: center;
+  padding: 3rem 0;
+  margin: 0 3rem;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  background: var(--color-green-extra-light);
+}
+
+/* Close button styled as retro button */
+.modal-header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: var(--color-pink-strong);
+}
+.close-btn {
+  font-size: 14px;
+  background: none;
+  border: none;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  outline: none;
+  color: var(--color-pink-extra-light);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  transform: scale(1.6);
+  color: var(--color-green-light);
+}
+
+/* Retro scrollbar */
+.modal-content::-webkit-scrollbar {
+  width: 14px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px solid var(--color-pink-strong);
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-pink-strong), var(--color-pink-light));
+  border: 1px solid var(--color-pink-strong);
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4);
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--color-green-strong), var(--color-green-light));
+}
+
+/* Retro button styling for links */
+.links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.links a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(to bottom, var(--color-pink-strong), var(--color-pink-light));
+  color: white;
+  text-decoration: none;
+  border: 1px solid var(--color-pink-strong);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4), 
+              1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.links a:hover {
+  border: 1px solid var(--color-green-strong);
+  background: linear-gradient(to bottom, var(--color-green-strong), var(--color-green-light));
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4), 
+              2px 2px 4px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.modal-content h2 {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px dotted var(--color-pink-light);
+  padding-bottom: 0.5rem;
+}
+.modal-content ul {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.modal-content li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+/* Screenshots gallery */
+.screenshots {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  
+}
+
+.screenshots img {
+  width: 20rem;
+  height: fit-content;
+  border: 3px solid var(--color-pink-strong);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0px var(--color-pink-light);
+  transition: all 0.3s ease;
+}
+
+.screenshots img:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px var(--color-pink-light);
+}
+/* Status badge */
+.status{
+  width: fit-content;
+  display: flex;
+  padding: 0.6rem 1.2rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(to bottom, var(--color-green-light), var(--color-green-strong));
+  color: white;
+  border: 1px solid var(--color-pink-strong);
+  border-radius: 6px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*tecnologies*/
+.technologies-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 20px;
+}
+
+.tech-badge {
+  position: relative;
+  display: flex;
+  padding: 0.6rem 1.2rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 8px 15px;
+  border: 1px solid var(--color-pink-strong);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4), 
+              1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.tech-badge:hover {
+  border: 1px solid var(--color-green-strong);
+  background: linear-gradient(to bottom, var(--color-green-strong), var(--color-green-light));
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4), 
+              2px 2px 4px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.tech-tooltip {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c3e50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.tech-tooltip:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #2c3e50 transparent transparent transparent;
+}
+
+.tech-badge:hover .tech-tooltip {
+  visibility: visible;
+  opacity: 1;
+  top: -40px;
+}
+
+.tech-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.tech-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.tech-badge.beginner {
+  background: linear-gradient(to bottom, var(--color-blue-strong), var(--color-blue-light));
+}
+
+.tech-badge.intermediate {
+  background: linear-gradient(to bottom, var(--color-green-strong), var(--color-green-light));
+}
+
+.tech-badge.advanced {
+  background: linear-gradient(to bottom, var(--color-yellow-strong), var(--color-yellow-light));
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .modal {
+    width: 90vw;
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 95vw;
+    max-height: 70vh;
+  }
+  
+  .modal-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    max-height: 75vh;
+  }
+  
+  .links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .links a {
+    width: 100%;
+    text-align: center;
+  }
+}
