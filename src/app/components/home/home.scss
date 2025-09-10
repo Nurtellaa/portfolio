@@ -13,13 +13,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 8vw;
-  letter-spacing: 1vw;
   text-align: center;
   z-index: 2;
   pointer-events: none;
   
   h1 {
+    letter-spacing: 2vw;
     margin: 0;
     font-weight: 300;
     opacity: 0.8;
@@ -184,9 +183,6 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .title {
-    font-size: 10vw;
-  }
 
   .content .svg-icons {
     .cd {
@@ -202,10 +198,6 @@
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: 12vw;
-    letter-spacing: 0.5vw;
-  }
 
   .content .svg-icons {
     .cd {

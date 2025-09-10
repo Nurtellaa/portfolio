@@ -12,7 +12,6 @@
     bottom: 0;
     right: 0;
     width: 100%;
-    font-size: 8vw;
     letter-spacing: 1vw;
     text-align: right;
   }
@@ -32,7 +31,6 @@
 
     h3 {
       text-align: center;
-      font-size: 4vw;
       letter-spacing: 0.5vw;
       color: var(--color-green-extra-light);
       margin: 1rem;
@@ -65,6 +63,7 @@
     min-height: 100vh;
     position: static;
     flex-direction: column;
+    gap: 2rem;
     justify-content: space-around;
     align-items: center;
     margin: 0;
@@ -79,13 +78,9 @@
       align-items: center;
 
       h3 {
-        font-size: 5vw;
         letter-spacing: 0.3vw;
       }
 
-      p {
-        font-size: clamp(14px, 2.5vw, 18px);
-      }
     }
 
     .img-me {
@@ -97,7 +92,6 @@
 
     .title {
       position: static;
-      font-size: 8vw;
       letter-spacing: 0.5vw;
       text-align: center;
     }
@@ -105,21 +99,7 @@
 
   /* Phones */
   @media (max-width: 600px) {
-    .work-info {
 
-      h3 {
-        font-size: clamp(18px, 6vw, 24px);
-      }
-
-      p {
-        font-size: clamp(12px, 4vw, 16px);
-      }
-    }
-
-    .title {
-      font-size: clamp(20px, 10vw, 36px);
-      letter-spacing: 0.3vw;
-    }
 
     .img-me {
       min-height: 15vh;

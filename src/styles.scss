@@ -90,12 +90,43 @@ h1, h2, h3, h4, h5, h6, span {
   padding: 0;
   color: var(--color-pink-medium);
 }
+
 p, li, a {
   font-weight: 700;
   font-family: 'Hachi Maru Pop', cursive; /* Imported above */
   margin: 0;
   padding: 0;
 }
+
+h1 {
+  font-size: clamp(2rem, 10vw, 10rem);
+  letter-spacing: clamp(0.2rem, 1vw, 1rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 3rem);
+  letter-spacing: clamp(0.1rem, 0.3vw, 0.5rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 2rem);
+  letter-spacing: clamp(0.05rem, 0.2vw, 0.3rem);
+}
+
+h5 {
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  letter-spacing: clamp(0.05rem, 0.15vw, 0.2rem);
+}
+
+span {
+  font-size: clamp(0.9rem, 1.2rem, 1.2rem);
+  letter-spacing: 0.1vw;
+}
+
+p, li, a {
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
+}
+
 
 /* -----------------------------------------------------------------------
    COLOR UTILITIES

@@ -6,8 +6,6 @@
   background-size: cover;
 
   .title {
-    font-size: 8vw;
-    letter-spacing: 1vw;
     text-align: center;
     padding-top: 5vh;
     margin-bottom: 1rem;
@@ -114,7 +112,6 @@
         justify-content: space-between;
 
         .card-title {
-          font-size: 1.4rem;
           font-weight: 700;
           color: var(--color-green-strong);
           margin-bottom: 1rem;
@@ -127,7 +124,6 @@
           line-height: 1.6;
           margin-bottom: 1.5rem;
           flex-grow: 1;
-          font-size: 0.95rem;
         }
 
         
@@ -155,7 +151,6 @@
 @media (max-width: 768px) {
   .projects {
     .title {
-      font-size: 10vw;
       padding-top: 3vh;
     }
 
@@ -170,10 +165,7 @@
         .card-content {
           margin: 1.2rem;
           
-          .card-title {
-            font-size: 1.2rem;
-          }
-          
+
 
         }
       }
@@ -192,10 +184,7 @@
       
       .card-content {
         padding: 1rem;
-        
-        .card-title {
-          font-size: 1.1rem;
-        }
+
       }
     }
   }
