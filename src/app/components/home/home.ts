@@ -24,31 +24,23 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   isMusicPlaying = false;
-  private audioSubscription!: Subscription;
+  private subscription!: Subscription;
 
   constructor(private audioService: AudioService) {}
 
   ngOnInit(): void {
-    // Subscribe to audio service muted state
-    this.audioSubscription = this.audioService.mutedState$.subscribe(
-      (muted) => {
-        this.isMusicPlaying = !muted;
-        console.log('Music state changed:', this.isMusicPlaying ? 'Playing' : 'Paused');
-      }
-    );
+    this.subscription = this.audioService.mutedState$.subscribe(muted => {
+      this.isMusicPlaying = !muted;
+    });
 
-    // Set initial state
     this.isMusicPlaying = !this.audioService.getMutedState();
   }
 
   ngOnDestroy(): void {
-    if (this.audioSubscription) {
-      this.audioSubscription.unsubscribe();
-    }
+    if (this.subscription) this.subscription.unsubscribe();
   }
 
   toggleMusic(): void {
-    const currentState = this.audioService.getMutedState();
-    this.audioService.setMuted(!currentState);
+    this.audioService.setMuted(this.audioService.getMutedState() ? false : true);
   }
 }
