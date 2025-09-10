@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { PROJECTS } from '../../data/project-data';
 import { Project } from '../../models/project.model';
-import { Modal } from "../../shared/modal/modal";
+import { ModalProjects } from '../../shared/modal-project/modal-project';
 
 @Component({
   standalone: true,
   selector: 'app-projects',
-  imports: [CommonModule, Modal],
+  imports: [CommonModule, ModalProjects],
   templateUrl: './projects.html',
   styleUrl: './projects.scss'
 })

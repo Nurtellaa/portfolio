@@ -3,12 +3,12 @@ import { Project } from '../../models/project.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'app-modal-project',
   imports: [CommonModule],
-  templateUrl: './modal.html',
-  styleUrl: './modal.scss'
+  templateUrl: './modal-project.html',
+  styleUrl: './modal-project.scss'
 })
-export class Modal implements OnInit, OnDestroy {
+export class ModalProjects implements OnInit, OnDestroy {
   @Input() project: Project | null  = null;
   @Input() isActive: boolean = false;
   @Output() closeModal = new EventEmitter<void>();

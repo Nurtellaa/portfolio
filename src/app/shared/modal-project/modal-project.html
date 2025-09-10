@@ -41,9 +41,9 @@
       <p class="status">{{ project.status | titlecase }}</p>
 
       <div class="links">
-        <a *ngIf="project?.demoUrl" [href]="project?.demoUrl" target="_blank">🌍 Demo</a>
-        <a *ngIf="project?.repoUrl" [href]="project?.repoUrl" target="_blank">💻 Code</a>
-        <a *ngIf="project?.blogUrl" [href]="project?.blogUrl" target="_blank">📝 Blog</a>
+        <a *ngIf="project.demoUrl" [href]="project.demoUrl" target="_blank">🌍 Demo</a>
+        <a *ngIf="project?.repoUrl" [href]="project.repoUrl" target="_blank">💻 Code</a>
+        <a *ngIf="project?.blogUrl" [href]="project.blogUrl" target="_blank">📝 Blog</a>
       </div>
     </div>
   </div>
