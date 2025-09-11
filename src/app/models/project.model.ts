@@ -9,7 +9,7 @@ export interface Project {
     demoUrl?: string;             // Live demo URL
     repoUrl?: string;             // Repository URL (GitHub, etc.)
     blogUrl?: string;             // Optional article or explanation
-    status: 'active' | 'prototype' | 'academic' | 'in-progress'; // Project status
+    status: string; // Project status
 }
 export interface Tecnologies {
     name: string;                 // Technology name (e.g., Angular, Node.js)
