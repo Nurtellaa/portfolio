@@ -15,9 +15,10 @@
   }
 
   .content {
+    width: 55%;
     text-align: justify;
-    width: 80%;
     line-height: 1.6;
+
   }
 
   .img-me {
@@ -26,13 +27,9 @@
     right: 0;
     width: 40vw;
     height: 100vh;
-    z-index: -1;
+    z-index: 0;
+    overflow: hidden;
     
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
   }
 
   // Tablet devices (768px - 1024px)
@@ -49,7 +46,7 @@
     }
 
     .content {
-      width: 85%;
+      width: 60%;
       line-height: 1.5;
     }
 
@@ -161,16 +158,4 @@
     }
   }
 
-  // Very large screens (over 1440px)
-  @media (min-width: 1441px) {
-    padding-left: 15rem;
-    
-    .content {
-      width: 70%;
-    }
-
-    .img-me {
-      width: 35vw;
-    }
-  }
 }

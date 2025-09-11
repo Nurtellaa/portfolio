@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ModalContact } from "../../shared/modal-contact/modal-contact";
 import { CommonModule } from '@angular/common';
+import { FlipImage } from "../../shared/flip-image/flip-image";
 
 @Component({
   standalone: true,
   selector: 'app-contact',
-  imports: [ModalContact, CommonModule],
+  imports: [ModalContact, CommonModule, FlipImage],
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
 })

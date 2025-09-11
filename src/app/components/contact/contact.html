@@ -1,6 +1,10 @@
 <div class="contact">
     <div class="me-img">
-        <img src="/assets/img/img-me_03.png" alt="Picture of me">
+        <app-flip-image
+            [normalImage]="'assets/img/img-me_03.png'"
+            [cartoonImage]="'assets/img/img-me_03_cartoon.png'"
+            [altText]="'My Profile Photo'">
+        </app-flip-image>
     </div>
     <div class="content">
         <div class="title">
@@ -30,7 +34,7 @@
     
 </div>
 
-<app-modal-contact ç
+<app-modal-contact 
   [isActive]="isModalActive" 
   (closeModal)="closeModal()">
 </app-modal-contact>

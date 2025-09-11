@@ -1,0 +1,36 @@
+<div class="flip-container" (click)="flipCoin()">
+  <div class="flipper" [class.flipped]="isFlipped">
+    <div class="back" >
+      <img 
+        [src]="normalImage" 
+        [alt]="altText + ' - Normal'" 
+        class="responsive-image"
+        (error)="onImageError($event, 'normal')"
+        onerror="this.style.display='none'">
+        
+      <!-- Placeholder para imagen normal -->
+      <div class="image-placeholder" *ngIf="!normalImage">
+        <span>Normal image not set</span>
+      </div>
+    </div>
+    
+    <div class="front">
+      <img 
+        [src]="cartoonImage" 
+        [alt]="altText + ' - Cartoon'" 
+        class="responsive-image"
+        (error)="onImageError($event, 'cartoon')"
+        onerror="this.style.display='none'">
+        
+      <!-- Placeholder para imagen cartoon -->
+      <div class="image-placeholder" *ngIf="!cartoonImage">
+        <span>Cartoon image not set</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Indicador de carga -->
+<div class="loading-indicator" *ngIf="!normalImage && !cartoonImage">
+  Loading images...
+</div>
