@@ -34,7 +34,7 @@
       width: 350px;
       min-height: 400px;
       border-radius: 20px;
-      background: linear-gradient(135deg, var(--color-green-extra-light) 0%, #ffffff 100%);
+      background: linear-gradient(135deg, var(--color-green-light) 0%, var(--color-green-extra-light) 100%);
       box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.15),
         0 4px 12px rgba(0, 0, 0, 0.1);
@@ -120,7 +120,7 @@
         }
 
         .card-description {
-          color: #666;
+          color: var(--color-green-extra-strong);
           line-height: 1.6;
           margin-bottom: 1.5rem;
           flex-grow: 1;

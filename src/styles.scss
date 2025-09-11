@@ -41,7 +41,7 @@
 
 /* Dark mode */
 body.dark-mode {
-  --background: #031D05;
+  --background: var(--color-green-very-strong);
   --text-primary: #ffffff;
   --text-secondary: #cccccc;
   --border-color: #333333;
@@ -52,6 +52,7 @@ body.dark-mode {
   --icon-active-bg: var(--color-pink-extra-strong);
   --tooltip-bg: var(--color-pink-medium);
   --tooltip-text: #ffffff;
+  --color-green-extra-light: #1B5E20;
 }
 body {
   background: var(--background);

@@ -2,12 +2,11 @@
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  font-family: 'Courier New', monospace;
 }
 
 .gamejam-title {
   text-align: center;
-  color: #e91e63;
+  color: var(--color-pink-medium);
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -16,15 +15,15 @@
 }
 
 .gamejam-card {
-  background: #e8f5e6;
-  border: 5px solid #e91e63;
+  background: var(--color-green-extra-light);
+  border: 5px solid var(--color-pink-medium);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 8px 8px 0 #c2185b;
+  box-shadow: 8px 8px 0 var(--color-pink-extra-strong);
 }
 
 .gamejam-header {
-  background: #e91e63;
+  background: var(--color-pink-medium);
   padding: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -41,7 +40,7 @@
 
 .game-year {
   background: white;
-  color: #e91e63;
+  color: var(--color-pink-medium);
   padding: 0.5rem 1rem;
   border-radius: 50px;
   font-weight: bold;
@@ -61,7 +60,7 @@
 .screenshot {
   width: 100%;
   height: auto;
-  border: 3px solid #e91e63;
+  border: 3px solid var(--color-pink-medium);
   border-radius: 10px;
   box-shadow: 4px 4px 0 #f8bbd0;
 }
@@ -105,11 +104,11 @@
 
 .detail-label {
   font-weight: bold;
-  color: #e91e63;
+  color: var(--color-pink-medium);
 }
 
 .detail-value {
-  color: #333;
+  color: var(--color-green-extra-strong);
 }
 
 .tech-tags, .platform-tags {
@@ -138,7 +137,7 @@
 }
 
 .installation-text, .executable-info {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-green-extra-strong);
   padding: 1rem;
   border-radius: 8px;
   border: 2px dashed #f8bbd0;
@@ -146,7 +145,6 @@
 
 .executable-info {
   margin-top: 0.5rem;
-  font-family: monospace;
 }
 
 .game-actions {
@@ -166,10 +164,10 @@
 }
 
 .download-btn {
-  background: linear-gradient(to bottom, #e91e63, #f8bbd0);
+  background: linear-gradient(to bottom, var(--color-pink-medium), #f8bbd0);
   color: white;
-  border: 2px solid #e91e63;
-  box-shadow: 0 4px 0 #c2185b;
+  border: 2px solid var(--color-pink-medium);
+  box-shadow: 0 4px 0 var(--color-pink-extra-strong);
 }
 
 .ggj-link {
@@ -180,7 +178,7 @@
 
 .download-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 0 #c2185b;
+  box-shadow: 0 6px 0 var(--color-pink-extra-strong);
 }
 
 .ggj-link:hover {
