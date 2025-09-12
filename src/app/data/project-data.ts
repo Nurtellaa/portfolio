@@ -19,8 +19,8 @@ export const PROJECTS: Project[] = [
         ],
         contribution: 'This project was developed as part of the Final Degree Project for Multiplatform Application Development (DAM).',
         screenshots: [
-            '/assets/projects/sproutly1.png',
-            '/assets/projects/sproutly2.png'
+            'assets/projects/sproutly1.png',
+            'assets/projects/sproutly2.png'
         ],
         repoUrl: 'https://github.com/Nurtellaa/sproutly',
         status: 'in-progress'
@@ -42,8 +42,8 @@ technologies: [
         ],
         contribution: 'Developed the backend API and integrated real-time features using Socket.IO.',
         screenshots: [
-            '/assets/projects/taskflow1.png',
-            '/assets/projects/taskflow2.png'
+            'assets/projects/taskflow1.png',
+            'assets/projects/taskflow2.png'
         ],
         status: 'Working on it (soon available)'
     },
@@ -71,8 +71,8 @@ technologies: [
         ],
         "contribution": "Developed the complete JWT authentication system, implemented the download manager with EntityManager for data persistence, and designed the JavaFX user interface for library and collections management.",
         "screenshots": [
-            "/assets/projects/helium1.png",
-            "/assets/projects/helium2.png"
+            "assets/projects/helium1.png",
+            "assets/projects/helium2.png"
         ],
         "repoUrl": "https://github.com/Nurtellaa/helium",
         "status": "in-progress"
