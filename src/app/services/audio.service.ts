@@ -8,7 +8,7 @@ export class AudioService {
   mutedState$ = this.mutedState.asObservable();
 
   constructor() {
-    this.audio = new Audio('/assets/music/music.mp3');
+    this.audio = new Audio('assets/music/music.mp3');
     this.audio.loop = true;
     this.audio.preload = 'auto';
     this.audio.volume = 0.5;
